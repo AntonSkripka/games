@@ -1,0 +1,21 @@
+$colors: (
+	'primary': #ffffff
+);
+
+body.light {
+	--primary: #ffffff;
+	--secondary: #000000;
+	--dark-gray: #7a7a7a;
+	--white-gray: #d9d9d9;
+	--gray: #d7d7d7;
+	--background: #eeeeee;
+	--hover: #f1f1f1;
+	--swiper-active: #797979;
+}
+
+body.dark {
+	--primary: #444444;
+	--secondary: #ffffff;
+	--background: #272727;
+	--hover: #252526;
+}

@@ -1,0 +1,75 @@
+.change-theme {
+	position: relative;
+
+	@media screen and (max-width: calc(getBreakpoint('desktop') - 1px)) {
+		transform: scale(0.9);
+	}
+
+	@media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+		transform: scale(0.85);
+	}
+
+	@media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
+		transform: scale(0.8);
+	}
+
+	> label {
+		width: 40px;
+		height: 20px;
+		background-color: var(--dark-gray);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-radius: 200px;
+		border: none;
+		cursor: pointer;
+		position: relative;
+		padding: 0 2px;
+
+		&::before {
+			content: '';
+			border: 1px solid var(--secondary);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background-color: var(--primary);
+			z-index: 1;
+			transition: 0.3s ease-in-out transform;
+		}
+
+		#moon {
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		> img {
+			z-index: 2;
+			transition: 0.3s ease-in-out opacity;
+		}
+	}
+
+	#changeTheme:checked + label::before {
+		transform: translateX(100%);
+	}
+
+	#changeTheme:checked + label {
+		#sun {
+			visibility: hidden;
+			opacity: 0;
+		}
+		#moon {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	> #changeTheme {
+		visibility: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}

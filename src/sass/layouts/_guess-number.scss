@@ -1,0 +1,131 @@
+.guess-number {
+    width: 100%;
+
+    > .container {
+        margin: 0 auto;
+        padding-top: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        @include lineSection;
+    }
+
+    &__title {
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 36px;
+        text-align: center;
+    }
+
+    &__list {
+        width: 576px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 36px;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
+            width: 480px;
+            flex-direction: column;
+        }
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            gap: 15px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+        }
+    }
+
+    &__form {
+        width: 150px;
+        height: 35px;
+        position: relative;
+        border-radius: 20px;
+        box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.25);
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
+            margin-top: 20px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            max-width: 145px;
+            height: 32px;
+            margin-top: 12px;
+            border-radius: 15px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            max-width: 150px;
+            height: 32px;
+            margin-top: 15px;
+        }
+    }
+
+    &__input {
+        width: 150px;
+        height: 35px;
+        position: absolute;
+        border-radius: 20px;
+        padding: 10px 45px 10px 10px;
+        background-color: #d7d7d7;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            width: 100%;
+            height: 32px;
+            font-size: 11px;
+            border-radius: 15px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            width: 100%;
+            height: 32px;
+            font-size: 12px;
+        }
+    }
+
+    &__button {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 115px;
+        border-radius: 0 20px 20px 0;
+        background-color: #000;
+
+        &:active > img {
+            transform: scale(0.8);
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
+            width: 32px;
+            height: 32px;
+            left: calc(100% - 32px);
+            border-radius: 0 15px 15px 0;
+        }
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 12px;
+        text-align: right;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
+            margin-top: -70px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            font-size: 11px;
+            margin-top: 8px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            font-size: 11px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    }
+}

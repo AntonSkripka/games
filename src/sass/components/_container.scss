@@ -1,0 +1,25 @@
+.container {
+	max-width: 1090px;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 20px;
+
+	// outline: 1px solid green;
+	@media screen and (max-width: calc(getBreakpoint('desktop') - 1px)) {
+		width: 768px;
+		padding: 0;
+		// outline: 1px solid red;
+	}
+
+	@media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
+		width: 480px;
+		padding: 0;
+		// outline: 1px solid blue;
+	}
+
+	@media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+		width: 320px;
+		padding: 0 15px;
+		// outline: 1px solid yellow;
+	}
+}

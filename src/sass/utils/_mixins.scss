@@ -1,0 +1,53 @@
+@mixin multi-transition($properties, $duration: 500ms, $timing-function: cubic-bezier(0.4, 0, 0.2, 1), $delay: 0s) {
+    $transitions: (
+    );
+
+@if type-of($properties)=="list" {
+    @each $prop in $properties {
+        $transitions: append($transitions, #{$prop} $duration $timing-function $delay, comma);
+    }
+}
+
+@else {
+    $transitions: #{$properties} $duration $timing-function $delay;
+}
+
+transition: $transitions;
+}
+
+@mixin lineSection {
+	&::after {
+		content: '';
+		background: var(--secondary);
+		width: 536px;
+		height: 1px;
+		display: block;
+		margin: 36px auto 0;
+
+		@media screen and (max-width: calc(getBreakpoint('desktop') - 1px)) {
+			width: 469px;
+		}
+
+		@media screen and (max-width: calc(getBreakpoint('desktop') - 1px)) {
+			width: 335px;
+		}
+
+		@media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+			width: 201px;
+		}
+
+		@media screen and (max-width: calc(getBreakpoint('mobile') - 1px)) {
+			width: 134px;
+		}
+	}
+}
+@mixin noneInputTypeNumScroll {
+	appearance: textfield;
+	-webkit-appearance: none;
+	-moz-appearance: textfield;
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+}

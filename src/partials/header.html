@@ -1,0 +1,84 @@
+<header class="header">
+	<div class="container">
+		<nav class="header__nav">
+			<a href="./index.html">
+				<img src="./images/logo-header.svg" alt="logo" />
+			</a>
+
+			<ul class="header__nav-list">
+				<li class="header__nav-item">
+					Інтерактив
+					<img src="./images/arrow-down.svg" alt="arrow-down" />
+					<ul class="header__nav-sublist">
+						<li class="header__nav-sublist--item">
+							<button class="header__nav-sublist--btn" id="btnFilter" data-filter="without-filter" >
+								Без фільтрів
+							</button>
+							<button class="header__nav-sublist--btn" id="btnFilter" data-filter="numeral">
+								Числовий
+							</button>
+						</li>
+						<li class="header__nav-sublist--item">
+							<button class="header__nav-sublist--btn" id="btnFilter" data-filter="game">
+								Ігровий
+							</button>
+						</li>
+						<li class="header__nav-sublist--item">
+							<button class="header__nav-sublist--btn" id="btnFilter" data-filter="educational">
+								Ознайомчий
+							</button>
+						</li>
+					</ul>
+				</li>
+				<li class="header__nav-item">
+					<a href="#ourTeam">Досягнення</a>
+				</li>
+				<li class="header__nav-item"><a href="#contacts">Контакти</a></li>
+			</ul>
+		</nav>
+
+		<ul class="header__user-panel">
+			<li class="header__user-panel--item change-theme">
+				<input type="checkbox" id="changeTheme" />
+				<label for="changeTheme">
+					<img src="./images/sun.svg" alt="sun" id='sun'/>
+					<img src="./images/moon.svg" alt="moon" id='moon'/>
+				</label>
+			</li>
+			<li class="header__user-panel--item">
+				Вітаємо, <span id="userName">User</span>!</span>
+				<ul class='header__user-panel--sublist'>
+					<li><button id='logout'>Вийти</button></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="backdrop is-hidden" data-modal="header">
+		<div class="header__modal">
+			<button class="header__modal-close modal__btn-close" data-modal-close="header">
+				<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1 1L8.5 8.5M16 16L8.5 8.5M8.5 8.5L16 1L1 16" stroke="black" />
+				</svg>
+			</button>
+			<strong class='header__modal-title'>
+				Привіт! <br>
+				Ви потрапили на сайт інтерактивних ігор та завдань<br class='md-hidden'>
+				Надіємось, що вам сподобається і ви отримаєте позитивні емоції! <br class='md-hidden'>
+				Бажаємо Вам гарно провести час!
+			</strong>
+			<form class="header__modal-form">
+				<label for="headerName" class='header__modal-form--label'>Введіть своє ім’я:</label>
+				<input type="text" id='header__modal-form--name' placeholder='Ваше ім’я...' class='header__modal-form--input' name='headerName' id="headerName">
+				<button class='header__modal-form--btn'>Зберегти</button>
+			</form>
+			<div class="header__modal-images">
+				<img src="./images/sword.svg" alt="sworld" />
+				<img src="./images/puzzle.svg" alt="puzzle" />
+				<img src="./images/game-development2.svg" alt="game-development" />
+				<img src="./images/tic-tac-toe.svg" alt="tic-tac-toe" />
+			</div>
+		</div>
+	</div>
+</header>
+
+

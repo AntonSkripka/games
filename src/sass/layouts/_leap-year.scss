@@ -1,0 +1,114 @@
+.leap-year {
+    .container {
+        padding-top: 36px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include lineSection;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            padding-top: 25px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            padding-top: 20px;
+        }
+    }
+
+    &__title {
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        padding-bottom: 36px;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            font-size: 15px;
+            padding-bottom: 25px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+        width: 576px;
+        margin-bottom: 36px;
+
+        @media screen and (min-width: getBreakpoint('tablet')) {
+            flex-direction: row;
+        }
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            width: 100%;
+            max-width: 450px;
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            width: 100%;
+            max-width: 320px;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__input-form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
+            width: 100%;
+        }
+    }
+
+    &__input {
+        width: 180px;
+        height: 35px;
+        border-radius: 20px 0 0 20px;
+        padding: 10px;
+        background-color: #d7d7d7;
+        box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.25);
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            width: 100%;
+            max-width: 145px;
+            height: 32px;
+            font-size: 11px;
+            border-radius: 15px 0 0 15px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            width: 100%;
+            max-width: 140px;
+            height: 32px;
+            font-size: 12px;
+            border-radius: 15px 0 0 15px;
+        }
+    }
+
+    #leap-year__btn {
+        width: 35px;
+        height: 35px;
+        border-radius: 0 20px 20px 0;
+        background-color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.25);
+
+        &:active > img {
+            transform: scale(0.8);
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
+            width: 32px;
+            height: 32px;
+            border-radius: 0 15px 15px 0;
+        }
+    }
+}

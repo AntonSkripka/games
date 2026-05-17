@@ -1,0 +1,168 @@
+.rps-game {
+    > .container {
+        padding-top: 36px;
+        background: var(--primary);
+        @include lineSection;
+
+        @media screen and (max-width: getBreakpoint('tablet')) { // 768px
+            position: relative;
+        }
+        @media screen and (max-width: getBreakpoint('mobileXL')) { // 480px
+            position: relative;
+        }
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+
+    &__title {
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 36px;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__choice-list {
+        display: flex;
+        align-items: center;
+        width: 256px;
+        justify-content: space-between;
+        margin: 0 auto 36px;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            width: 100%;
+            max-width: 250px;
+            margin-bottom: 25px;
+            gap: 12px;
+            justify-content: center;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            width: 100%;
+            max-width: 240px;
+            margin-bottom: 20px;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    &__choice--item {
+        background-color: black;
+        border-radius: 20px;
+        padding: 10px;
+        cursor: pointer;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            border-radius: 18px;
+            padding: 9px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            border-radius: 15px;
+            padding: 8px;
+        }
+    }
+
+    &__choice {
+        position: relative;
+
+        @media screen and (max-width: getBreakpoint('mobileXL')) { // 480px
+            position: static;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__score {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 170%;
+        position: absolute;
+        top: 0;
+        right: 20%;
+
+        @media screen and (max-width: getBreakpoint('desktop')) { // 1090px
+            right: 10%;
+        }
+        @media screen and (max-width: getBreakpoint('tablet')) { // 768px
+            top: 40%;
+            right: 10%;
+        }
+        @media screen and (max-width: getBreakpoint('mobileXL')) { // 480px
+            position: relative;
+            margin: 0 auto;
+            top: 0;
+            right: 0;
+        }
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            font-size: 11px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            font-size: 11px;
+        }
+    }
+
+    &__status {
+        display: block;
+        margin: 20px auto 36px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 12px;
+        color: #039900;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            margin: 18px auto;
+            font-size: 11px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            margin: 15px auto;
+            font-size: 11px;
+        }
+    }
+
+    &__btn {
+        display: block;
+        margin: 20px auto 36px;
+        text-align: center;
+        border-radius: 20px;
+        padding: 10px 20px;
+        width: 182px;
+        height: 50px;
+        background-color: black;
+        font-family: getFont('montserrat');
+        font-weight: 400;
+        font-size: 12px;
+        color: white;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            margin: 18px auto;
+            font-size: 11px;
+            width: 170px;
+            height: 42px;
+            border-radius: 18px;
+            padding: 9px 18px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            margin: 15px auto;
+            font-size: 11px;
+            width: 160px;
+            height: 40px;
+            border-radius: 15px;
+            padding: 8px 15px;
+        }
+    }
+}

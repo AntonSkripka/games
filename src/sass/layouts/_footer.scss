@@ -1,0 +1,165 @@
+.footer {
+    height: 220px;
+    padding: 0 5px;
+    margin: auto;
+
+    @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+        height: 350px;
+        padding-top: 20px;
+    }
+
+    > .container {
+        height: 100%;
+        position: relative;
+        background: var(--primary);
+        margin: 0 auto;
+
+        @media screen and (max-width: calc(getBreakpoint('desktop') - 1px)) {
+            display: flex;
+            align-items: center;
+        }
+        @media screen and (max-width: getBreakpoint('tablet')) {
+            width: 100%;
+        }
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
+            flex-direction: column;
+        }
+    }
+
+    &__adaptive-list {
+        @media screen and (max-width: calc(getBreakpoint('desktop') - 1px)) {
+            width: 420px;
+            display: flex;
+            align-items: normal;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
+            width: 98%;
+            align-items: center;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            flex-direction: column;
+        }
+    }
+
+    &__img {
+        width: 165px;
+        height: 75px;
+        position: absolute;
+        top: 75px;
+        bottom: 75px;
+        left: 0;
+        cursor: pointer;
+
+        @media screen and (max-width: calc(getBreakpoint('desktop') - 1px)) {
+            position: static;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__list {
+        position: absolute;
+        top: 61px;
+        bottom: 59px;
+        left: 350px;
+
+        @media screen and (max-width: calc(getBreakpoint('desktop') - 1px)) {
+            position: static;
+        }
+    }
+
+    &__list-link {
+        font-family: var(--montserrat);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 170%;
+        color: var(--secondary);
+    }
+
+    &__form {
+        width: 347px;
+        height: 60px;
+        display: flex;
+        flex-wrap: wrap;
+        position: absolute;
+        top: 97px;
+        bottom: 63px;
+        left: 725px;
+
+        @media screen and (max-width: calc(getBreakpoint('desktop') - 1px)) {
+            position: static;
+        }
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
+            margin-bottom: 15px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__form-input {
+        width: 204px;
+        height: 35px;
+        border-radius: 20px;
+        padding: 10px 80px 10px 10px;
+        margin-right: 36px;
+        background: #d7d7d7;
+        cursor: pointer;
+
+        @media screen and (max-width: calc(getBreakpoint('desktop') - 1px)) {
+            margin-right: 20px;
+        }
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            margin: 0 auto 10px;
+        }
+    }
+
+    &__form-button {
+        width: 107px;
+        height: 35px;
+        border-radius: 20px;
+        padding: 10px;
+        background: #000;
+        font-family: var(--montserrat);
+        font-weight: 400;
+        font-size: 12px;
+        color: #fff;
+        cursor: pointer;
+        @include multi-transition((background-color, color, transform), 200ms);
+
+        &:active {
+            background-color: var(--primary);
+            color: var(--secondary);
+            transform: scale(0.8);
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            margin: 0 auto 10px;
+        }
+    }
+
+    &__form-text {
+        font-family: var(--montserrat);
+        font-weight: 400;
+        font-size: 6px;
+        margin-top: 18px;
+
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            margin: 0 auto;
+        }
+    }
+}
+
+.button-close {
+    @include multi-transition(transform, 300ms, ease-in-out);
+
+    &:hover,
+    &:focus {
+        transform: rotate(360deg);
+        background-color: var(--hover);
+    }
+}

@@ -1,0 +1,101 @@
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 463px;
+    height: 245px;
+    background-color: #fff;
+    transform: translate(-50%, -50%) scale(1);
+    @include multi-transition(transform, 250ms);
+    z-index: 10;
+
+    @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+        width: 420px;
+        height: 220px;
+    }
+
+    .button-close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        @include multi-transition((transform, background-color), 300ms, ease-in-out);
+
+        &:hover,
+        &:focus {
+            transform: rotate(360deg);
+            background-color: var(--hover);
+        }
+    }
+
+    &__title {
+        position: absolute;
+        top: 83px;
+        left: 138px;
+        font-family: var(--montserrat);
+        font-weight: 400;
+        font-size: 20px;
+        text-align: center;
+        color: #000;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            top: 75px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            width: 25px;
+            height: 25px;
+        }
+
+        &:nth-of-type(1) {
+            top: 69px;
+            left: 43px;
+
+            @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+                top: 60px;
+                left: 40px;
+            }
+        }
+
+        &:nth-of-type(2) {
+            top: 69px;
+            left: 391px;
+
+            @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+                top: 60px;
+                left: 355px;
+            }
+        }
+
+        &:nth-of-type(3) {
+            top: 145px;
+            left: 87px;
+
+            @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+                top: 130px;
+                left: 80px;
+            }
+        }
+
+        &:nth-of-type(4) {
+            top: 145px;
+            left: 347px;
+
+            @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+                top: 130px;
+                left: 315px;
+            }
+        }
+    }
+}

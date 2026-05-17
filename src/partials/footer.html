@@ -1,0 +1,74 @@
+<footer class="footer" id="contacts">
+	<div class="container">
+		<ul class="footer__adaptive-list">
+			<a class="footer__img" href="#"
+				><img src="./images/logo-footer.svg" alt=""
+			/></a>
+			<ul class="footer__list">
+				<li class="footer__list-item">
+					<a class="footer__list-link" href="tel:+38(123)4567890"
+						>Тел: +38 (123) 456 78 90</a
+					>
+				</li>
+				<li class="footer__list-item">
+					<a class="footer__list-link" href="mailto:codingmagic@gmail.com"
+						>E-Mail: codingmagic@gmail.com</a
+					>
+				</li>
+				<li class="footer__list-item">
+					<a class="footer__list-link" href="https://www.facebook.com/"
+						>Facebook: CodingMagic</a
+					>
+				</li>
+				<li class="footer__list-item">
+					<a class="footer__list-link" href="https://x.com/"
+						>Twitter: CodingMagic</a
+					>
+				</li>
+				<li class="footer__list-item">
+					<a class="footer__list-link" href="https://www.instagram.com/"
+						>Instagram: CodingMagic</a
+					>
+				</li>
+			</ul>
+		</ul>
+		<form class="footer__form" id="emailForm">
+			<input
+				type="email"
+				pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
+				class="footer__form-input"
+				placeholder="Ваша ел. адреса..."
+				required
+			/>
+			<button type="submit" class="footer__form-button">Підписатись</button>
+			<p class="footer__form-text">
+				*Підписавшись, Ви зможете ортимувати інформаццію про новинки на сайті
+			</p>
+		</form>
+	</div>
+</footer>
+
+<div class="backdrop is-hidden" data-modal="footer">
+	<div class="modal" id="myModal">
+		<button class="button-close" data-modal-close="footer">
+			<svg
+				width="17"
+				height="17"
+				viewBox="0 0 17 17"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path d="M1 1L8.5 8.5M16 16L8.5 8.5M8.5 8.5L16 1L1 16" stroke="black" />
+			</svg>
+		</button>
+		<h2 class="modal-title">Дякую за підписку!</h2>
+		<img class="modal-img" src="./images/sword.svg" alt="sworld" />
+		<img
+			class="modal-img"
+			src="./images/game-development2.svg"
+			alt="game-development"
+		/>
+		<img class="modal-img" src="./images/puzzle.svg" alt="puzzle" />
+		<img class="modal-img" src="./images/tic-tac-toe.svg" alt="tic-tac-toe" />
+	</div>
+</div>

@@ -1,0 +1,70 @@
+.dino {
+    > div {
+        background: var(--primary);
+        padding-top: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        @include lineSection;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 36px;
+        font-size: 16px;
+        font-weight: 400;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+    }
+
+    &__btn {
+        margin-top: 36px;
+        margin-bottom: 36px;
+        font-family: getFont('montserrat');
+        background-color: #000000;
+        color: #ffffff;
+        font-weight: 400;
+        border-radius: 20px;
+        font-size: 12px;
+        padding: 10px 20px;
+        @include multi-transition(opacity, 300ms, ease-in-out);
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            margin-top: 25px;
+            margin-bottom: 25px;
+            font-size: 11px;
+            padding: 9px 18px;
+            border-radius: 18px;
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 11px;
+            padding: 8px 15px;
+            border-radius: 15px;
+        }
+    }
+}

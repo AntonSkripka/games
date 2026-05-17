@@ -1,0 +1,217 @@
+.calculator {
+    > .container {
+        padding-top: 36px;
+        padding-bottom: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        @include lineSection;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            padding-top: 28px;
+            padding-bottom: 28px;
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+
+    &__title {
+        font-family: map-get($fonts, 'montserrat'), sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--secondary);
+        display: flex;
+        justify-content: center;
+        margin-bottom: 49px;
+
+        @media screen and (max-width: calc(getBreakpoint('desktop') - 1px)) {
+            margin-bottom: 30px;
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
+            margin-bottom: 30px;
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            margin-bottom: 28px;
+            font-size: 15px;
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+    }
+
+    &__wrapper {
+        width: 629px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 38px;
+
+        @media screen and (max-width: calc(getBreakpoint('desktop') - 1px)) {
+            width: fit-content;
+            max-width: 768px;
+            column-gap: 20px;
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
+            width: 480px;
+            flex-direction: column;
+            row-gap: 20px;
+
+            [data-action='='] {
+                transform: rotate(90deg);
+                box-shadow: none;
+            }
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            width: 100%;
+            max-width: 450px;
+            column-gap: 25px;
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            width: 100%;
+            max-width: 320px;
+            flex-direction: column;
+            row-gap: 15px;
+
+            [data-action='='] {
+                transform: rotate(90deg);
+                box-shadow: none;
+            }
+        }
+    }
+
+    &__input {
+        border-radius: 20px;
+        padding: 10px 20px;
+        width: 135px;
+        height: 35px;
+        font-family: map-get($fonts, 'montserrat'), sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        color: var(--dark-gray);
+        box-shadow: 3px 3px 0 0 #00000040;
+        background: var(--gray);
+        @include noneInputTypeNumScroll;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            width: 130px;
+            height: 33px;
+            font-size: 11px;
+            padding: 9px 18px;
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            width: 100%;
+            max-width: 120px;
+            height: 32px;
+            font-size: 11px;
+            padding: 8px 15px;
+            border-radius: 15px;
+        }
+    }
+
+    &__action {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 10px;
+
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+    }
+
+    &__btn {
+        border-radius: 20px;
+        padding: 5px 10px;
+        width: 27px;
+        height: 25px;
+        box-shadow: 3px 3px 0 0 #00000040;
+        background: var(--secondary);
+        font-family: map-get($fonts, 'montserrat'), sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        color: var(--primary);
+        @include multi-transition(all, 10ms, ease);
+
+        &:active {
+            background-color: var(--primary);
+            color: var(--secondary);
+            transform: scale(0.8);
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            width: 26px;
+            height: 24px;
+            font-size: 11px;
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            width: 24px;
+            height: 22px;
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 15px;
+        }
+    }
+
+    &__result {
+        @extend .calculator__input; 
+        width: 100%;
+        box-shadow: none;
+        white-space: nowrap;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
+            min-width: 135px;
+            width: fit-content;
+            text-align: center;
+            max-width: 480px;
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+            width: 130px;
+            height: 33px;
+            font-size: 11px;
+            padding: 9px 18px;
+        }
+
+        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+            width: 100%;
+            max-width: 120px;
+            height: 32px;
+            font-size: 11px;
+            padding: 8px 15px;
+            border-radius: 15px;
+            min-width: 120px;
+            text-align: center;
+        }
+    }
+}
+
+.clicked {
+    background-color: var(--white-gray);
+    color: var(--secondary);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        background-color: var(--white-gray);
+    }
+    50% {
+        transform: scale(1.1);
+        background-color: var(--white-gray);
+    }
+}
