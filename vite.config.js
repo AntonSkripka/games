@@ -6,7 +6,7 @@ import FullReload from 'vite-plugin-full-reload'
 export default defineConfig({
   base: '/games/',
   define: {
-    global: {},
+    global: 'globalThis',
   },
   root: 'src',
   build: {
