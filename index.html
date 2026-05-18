@@ -12,8 +12,8 @@
 			rel="stylesheet"
 		/>
 		
-		<script type="module" crossorigin src="/games/assets/index-11588652.js"></script>
-		<link rel="stylesheet" href="/games/assets/index-dc5e7f16.css">
+		<script type="module" crossorigin src="/games/assets/index-e8659f10.js"></script>
+		<link rel="stylesheet" href="/games/assets/index-190a3efd.css">
 	</head>
 
 	<body class="light">
@@ -158,15 +158,15 @@
 
 		<div class="rps-game__wrapper">
 			<div class="rps-game__choice">
-				<ul class="rps-game__choice-list">
-					<li class="rps-game__choice--item rock">
-						<img src="/games/assets/stone-687492a4.svg" alt="stone" />
+				<ul class="rps-game__choice-list" id="playerList">
+					<li class="rps-game__choice--item rock" id="rock">
+						<img src="/games/assets/stone-687492a4.svg" alt="stone" id="rock"/>
 					</li>
-					<li class="rps-game__choice--item scissors">
-						<img src="/games/assets/scissors-296b083f.svg" alt="scissors" />
+					<li class="rps-game__choice--item scissors" id="scissors">
+						<img src="/games/assets/scissors-296b083f.svg" alt="scissors" id="scissors"/>
 					</li>
-					<li class="rps-game__choice--item paper">
-						<img src="/games/assets/paper-ddae1753.svg" alt="paper" />
+					<li class="rps-game__choice--item paper" id="paper">
+						<img src="/games/assets/paper-ddae1753.svg" alt="paper" id="paper"/>
 					</li>
 				</ul>
 				<ul class="rps-game__score">
@@ -206,25 +206,40 @@
 				class="calculator__input calculator__input-second"
 				placeholder="Введіть число"
 			/>
-			<button class="calculator__btn" data-action="=">=</button>
+			<button class="calculator__btn" data-action="=" id="resultCalc">=</button>
 			<span class="calculator__result">Результат</span>
 		</div>
 	</div>
 </section>
 
 			<section class="time-calculator" data-section="numeral">
-	<div class="container">
-		<h2 class="time-calculator__title">Калькулятор часу</h2>
-		<div class="time-calculator__wrapper">
-			<form class="time-calculator-form">
-				<input type="number" class="time-calculator-form__input" placeholder="Введіть число" />
-				<button class="time-calculator-form__button" type="button">
-					<img src="/games/assets/search-38aa7c2b.svg" alt="search" />
-				</button>
-			</form>
-			<span class="time-calculator__result">0 год . 0 хв</span>
-		</div>
-	</div>
+    <div class="container">
+        <h2 class="time-calculator__title">Калькулятор часу</h2>
+        <div class="time-calculator__wrapper">
+            <form class="time-calculator-form">
+                <input type="number" class="time-calculator-form__input" placeholder="Введіть число" min="0" />
+                <button class="time-calculator-form__button" type="button">
+                    <img src="/games/assets/search-38aa7c2b.svg" alt="search" />
+                </button>
+            </form>
+
+            <div class="time-calculator__clock">
+                <svg viewBox="0 0 200 200">
+                    <circle class="clock-face" cx="100" cy="100" r="92" />
+                    <circle class="clock-center" cx="100" cy="100" r="4" />
+                    <line class="clock-mark" x1="100" y1="12" x2="100" y2="20" />
+                    <line class="clock-mark" x1="188" y1="100" x2="180" y2="100" />
+                    <line class="clock-mark" x1="100" y1="188" x2="100" y2="180" />
+                    <line class="clock-mark" x1="12" y1="100" x2="20" y2="100" />
+                    
+                    <line id="hourHand" class="clock-hand clock-hand--hour" x1="100" y1="100" x2="100" y2="55" />
+					<line id="minuteHand" class="clock-hand clock-hand--minute" x1="100" y1="100" x2="100" y2="35" />
+                </svg>
+            </div>
+
+            <span class="time-calculator__result">0 год . 0 хв</span>
+        </div>
+    </div>
 </section>
 			<section class="dino" data-section="game">
 	<div class="container">
