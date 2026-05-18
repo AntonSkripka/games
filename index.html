@@ -12,8 +12,8 @@
 			rel="stylesheet"
 		/>
 		
-		<script type="module" crossorigin src="/games/assets/index-e8659f10.js"></script>
-		<link rel="stylesheet" href="/games/assets/index-190a3efd.css">
+		<script type="module" crossorigin src="/games/assets/index-fe2e5146.js"></script>
+		<link rel="stylesheet" href="/games/assets/index-94d5dd1d.css">
 	</head>
 
 	<body class="light">
@@ -50,7 +50,7 @@
 					</ul>
 				</li>
 				<li class="header__nav-item">
-					<a href="#ourTeam">Досягнення</a>
+					<a href="#slider">Досягнення</a>
 				</li>
 				<li class="header__nav-item"><a href="#contacts">Контакти</a></li>
 			</ul>
@@ -66,7 +66,7 @@
 			</li>
 			<li class="header__user-panel--item">
 				Вітаємо, <span id="userName">User</span>!</span>
-				<ul class='header__user-panel--sublist'>
+				<ul class='header__user-panel--sublist' id="listLogout">
 					<li><button id='logout'>Вийти</button></li>
 				</ul>
 			</li>
@@ -87,8 +87,8 @@
 			</strong>
 			<form class="header__modal-form">
 				<label for="headerName" class='header__modal-form--label'>Введіть своє ім’я:</label>
-				<input type="text" id='header__modal-form--name' placeholder='Ваше ім’я...' class='header__modal-form--input' name='headerName' id="headerName">
-				<button class='header__modal-form--btn'>Зберегти</button>
+				<input type="text" placeholder='Ваше ім’я...' class='header__modal-form--input' name='headerName' id="headerName">
+				<button type="submit" class='header__modal-form--btn'>Зберегти</button>
 			</form>
 			<div class="header__modal-images">
 				<img src="/games/assets/sword-fa141715.svg" alt="sworld" />
@@ -276,11 +276,12 @@
       <input class="biggest-num__input input-right" type="number" placeholder="Введіть число">
       <input class="biggest-num__input input-bottom" type="number" placeholder="Введіть число">
     </form>
-    <span class="biggest-num__span">Найбільше число, яке ви ввели - (число)</span>
+    <span class="biggest-num__span">Найбільше число, яке ви ввели:  <strong class="biggest-num__max-val">(число)</strong></span>
+    
+    <div class="biggest-num__chart" id="threeNumChart"></div>
   </div>
 </section>
-
-			<section class="our-team" data-section="educational" id="ourTeam">
+			<section class="our-team" data-section="educational" id="slider">
 	<div class="container">
 		<h2 class="our-team__title">Досягнення</h2>
 		<div class="our-team__container">
@@ -310,7 +311,6 @@
 	<div class="container">
 		<h2 class="scientist__title">Обери вченого/их</h2>
 
-		<!-- Сітка карток -->
 		<div class="scientist__card-box">
 			<div class="scientist__card">Albert Einstein</div>
 			<div class="scientist__card">Isaac Newton</div>
@@ -326,7 +326,6 @@
 			<div class="scientist__card">Hanna Hammarström</div>
 		</div>
 
-		<!-- Кнопки -->
 		<div class="scientist__buttons">
 			<button class="scientist__button" data-action="born-19">
 				Які вчені народилися в 19 ст.
@@ -426,15 +425,15 @@
 				<path d="M1 1L8.5 8.5M16 16L8.5 8.5M8.5 8.5L16 1L1 16" stroke="black" />
 			</svg>
 		</button>
-		<h2 class="modal-title">Дякую за підписку!</h2>
-		<img class="modal-img" src="/games/assets/sword-fa141715.svg" alt="sworld" />
+		<h2 class="modal__title">Дякую за підписку!</h2>
+		<img class="modal__img" src="/games/assets/sword-fa141715.svg" alt="sworld" />
 		<img
-			class="modal-img"
+			class="modal__img"
 			src="/games/assets/game-development2-a70ad7d8.svg"
 			alt="game-development"
 		/>
-		<img class="modal-img" src="/games/assets/puzzle-f7db1c80.svg" alt="puzzle" />
-		<img class="modal-img" src="/games/assets/tic-tac-toe-300ec219.svg" alt="tic-tac-toe" />
+		<img class="modal__img" src="/games/assets/puzzle-f7db1c80.svg" alt="puzzle" />
+		<img class="modal__img" src="/games/assets/tic-tac-toe-300ec219.svg" alt="tic-tac-toe" />
 	</div>
 </div>
 
