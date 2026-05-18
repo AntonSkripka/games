@@ -40,81 +40,80 @@
     }
 
     &__wrapper {
-        width: 392px;
+        width: 650px; 
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around; 
 
         @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
-            width: 480px;
+            width: 100%;
+            max-width: 480px;
             flex-direction: column;
-            row-gap: 45px;
+            row-gap: 35px;
         }
 
         @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
-            width: 100%;
             max-width: 450px;
-            flex-direction: column;
-            row-gap: 40px;
+            row-gap: 30px;
         }
 
         @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
-            width: 100%;
             max-width: 320px;
-            flex-direction: column;
-            row-gap: 30px;
+            row-gap: 25px;
+        }
+    }
+
+    &__clock {
+        width: 120px;
+        height: 120px;
+        flex-shrink: 0;
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
+            width: 100px;
+            height: 100px;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .clock-face {
+            fill: var(--gray, #f0f0f0);
+            stroke: var(--secondary, #000);
+            stroke-width: 3px;
+        }
+
+        .clock-center {
+            fill: var(--secondary, #000);
+        }
+
+        .clock-mark {
+            stroke: var(--secondary, #333);
+            stroke-width: 2px;
+            stroke-linecap: round;
+        }
+
+        .clock-hand {
+            transform-origin: 100px 100px; 
+            stroke-linecap: round;
+
+            &--hour {
+                stroke: var(--dark-gray, #333);
+                stroke-width: 5px;
+            }
+
+            &--minute {
+                stroke: #ff4757;
+                stroke-width: 3.5px;
+            }
         }
     }
 
     &-form {
         position: relative;
-        margin-right: 165px;
-
-        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
-            margin-right: 0px;
-        }
-
-        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
-            margin-right: 0px;
-            max-width: 450px;
-        }
-
-        @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
-            margin-right: 0px;
-            max-width: 320px;
-        }
-
-        &::before {
-            content: '';
-            border-bottom: 1px dashed var(--secondary);
-            position: absolute;
-            display: block;
-            width: 100px;
-            top: 50%;
-            margin-left: 182px;
-
-            @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
-                margin-left: 0px;
-                top: 160%;
-                width: 150px;
-            }
-
-            @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
-                margin-left: 0px;
-                top: 160%;
-                width: 130px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
-                margin-left: 0px;
-                top: 160%;
-                width: 120px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        }
+        margin-right: 0; 
 
         &__input {
             border-radius: 20px;
@@ -130,8 +129,7 @@
             @include noneInputTypeNumScroll;
 
             @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
-                width: 100%;
-                max-width: 140px;
+                width: 140px;
                 height: 32px;
                 font-size: 11px;
                 padding: 8px 36px 8px 10px;
@@ -139,8 +137,7 @@
             }
 
             @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
-                width: 100%;
-                max-width: 130px;
+                width: 130px;
                 height: 32px;
                 font-size: 12px;
                 padding: 8px 38px 8px 10px;

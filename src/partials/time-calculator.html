@@ -1,14 +1,29 @@
 <section class="time-calculator" data-section="numeral">
-	<div class="container">
-		<h2 class="time-calculator__title">Калькулятор часу</h2>
-		<div class="time-calculator__wrapper">
-			<form class="time-calculator-form">
-				<input type="number" class="time-calculator-form__input" placeholder="Введіть число" />
-				<button class="time-calculator-form__button" type="button">
-					<img src="./images/search.svg" alt="search" />
-				</button>
-			</form>
-			<span class="time-calculator__result">0 год . 0 хв</span>
-		</div>
-	</div>
+    <div class="container">
+        <h2 class="time-calculator__title">Калькулятор часу</h2>
+        <div class="time-calculator__wrapper">
+            <form class="time-calculator-form">
+                <input type="number" class="time-calculator-form__input" placeholder="Введіть число" min="0" />
+                <button class="time-calculator-form__button" type="button">
+                    <img src="./images/search.svg" alt="search" />
+                </button>
+            </form>
+
+            <div class="time-calculator__clock">
+                <svg viewBox="0 0 200 200">
+                    <circle class="clock-face" cx="100" cy="100" r="92" />
+                    <circle class="clock-center" cx="100" cy="100" r="4" />
+                    <line class="clock-mark" x1="100" y1="12" x2="100" y2="20" />
+                    <line class="clock-mark" x1="188" y1="100" x2="180" y2="100" />
+                    <line class="clock-mark" x1="100" y1="188" x2="100" y2="180" />
+                    <line class="clock-mark" x1="12" y1="100" x2="20" y2="100" />
+                    
+                    <line id="hourHand" class="clock-hand clock-hand--hour" x1="100" y1="100" x2="100" y2="55" />
+					<line id="minuteHand" class="clock-hand clock-hand--minute" x1="100" y1="100" x2="100" y2="35" />
+                </svg>
+            </div>
+
+            <span class="time-calculator__result">0 год . 0 хв</span>
+        </div>
+    </div>
 </section>
