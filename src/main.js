@@ -1,6 +1,11 @@
+import './js/ModalManager';
+import './js/modals';
 import './js/theme';
+import './js/sortHeader';
 import './js/yearCheck';
 import './js/guessNumber';
 import './js/rpsGame';
 import './js/calc';
 import './js/timeCalc';
+import './js/threeNumbers';
+import './js/filterCards';

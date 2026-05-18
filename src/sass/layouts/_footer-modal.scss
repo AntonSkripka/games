@@ -8,6 +8,8 @@
     transform: translate(-50%, -50%) scale(1);
     @include multi-transition(transform, 250ms);
     z-index: 10;
+    background-color: var(--primary);
+    border-radius: 15px;
 
     @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
         width: 420px;
@@ -26,7 +28,6 @@
         &:hover,
         &:focus {
             transform: rotate(360deg);
-            background-color: var(--hover);
         }
     }
 
@@ -38,7 +39,7 @@
         font-weight: 400;
         font-size: 20px;
         text-align: center;
-        color: #000;
+        color: var(--secondary);
 
         @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
             top: 75px;
@@ -48,7 +49,7 @@
         }
     }
 
-    &__image {
+    &__img {
         position: absolute;
         width: 30px;
         height: 30px;
