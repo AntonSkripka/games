@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.width = BOARD_WIDTH;
     canvas.height = BOARD_HEIGHT;
 
-    const IMG_PATH = "./images/dino/";
+    const IMG_PATH = `${import.meta.env.BASE_URL}images/dino/`;
 
     const images = {};
     const imgNames = [
