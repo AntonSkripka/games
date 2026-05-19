@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const hourHand = document.getElementById('hourHand');
     const minuteHand = document.getElementById('minuteHand');
+
+    function checkAndUnlockTimeAchievements() {
+        const username = localStorage.getItem('headerName');
+        if (!username) return;
+
+        unlockAchievement(username, 'timeCalc', 'first_time');
+    }
+
     function calculateTime() {
         const totalMinutes = parseInt(input.value, 10);
 
@@ -20,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const hours = Math.floor(totalMinutes / 60);
         const minutes = totalMinutes % 60;
         resultSpan.textContent = `${hours} год . ${minutes} хв`;
+
+        checkAndUnlockTimeAchievements();
 
         const minuteAngle = totalMinutes * 6;
         const hourAngle = totalMinutes * 0.5;

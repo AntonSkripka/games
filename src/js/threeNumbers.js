@@ -41,6 +41,26 @@ const threeNumChartOptions = {
 const threeNumChartInstance = new ApexCharts(document.querySelector("#threeNumChart"), threeNumChartOptions);
 threeNumChartInstance.render();
 
+function checkAndUnlockThreeNumbersAchievements(values) {
+    const username = localStorage.getItem('headerName');
+    if (!username) return;
+
+    const isAllFilled = Array.from(threeNumInputs).every(input => input.value.trim() !== '');
+    if (!isAllFilled) return;
+
+    const sum = values.reduce((acc, curr) => acc + curr, 0);
+
+    unlockAchievement(username, 'threeNumbers', 'first_combo');
+
+    if (sum >= 100) {
+        unlockAchievement(username, 'threeNumbers', 'sum_100');
+    }
+
+    if (sum >= 500) {
+        unlockAchievement(username, 'threeNumbers', 'perfect');
+    }
+}
+
 function threeNumHandleInput() {
     const values = Array.from(threeNumInputs).map(input => Number(input.value) || 0);
     const isAllEmpty = Array.from(threeNumInputs).every(input => input.value === '');
@@ -67,6 +87,8 @@ function threeNumHandleInput() {
         }],
         colors: newColors
     });
+
+    checkAndUnlockThreeNumbersAchievements(values);
 }
 
 threeNumForm.addEventListener('submit', (e) => e.preventDefault());

@@ -34,6 +34,7 @@
     &__window {
         width: 290px;
         margin: 0 auto;
+        overflow: hidden;
 
         @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
             width: 100%;
@@ -71,12 +72,15 @@
 
     &__list {
         display: flex;
-        overflow-x: auto;
+        overflow-x: visible;
         width: max-content;
         height: 100%;
         gap: 30px;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+
+        @include multi-transition(transform, 400ms, ease-in-out); 
+        will-change: transform;
 
         @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
             gap: 25px;
@@ -86,9 +90,9 @@
         }
     }
 
+
     &__item {
-        transform: translateX(0);
-        @include multi-transition(transform, 300ms);
+        flex-shrink: 0;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -141,40 +145,37 @@
         }
 
         &-item {
-            > button {
-                width: 18px;
-                height: 3px;
-                background-color: var(--white-gray);
-                border-radius: 3px;
-                @include multi-transition((width, height), 300ms);
+            width: 18px;
+            height: 4px;
+            background-color: var(--white-gray, #ccc);
+            border-radius: 3px;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            @include multi-transition((width, height, background-color), 300ms);
 
-                &:hover {
-                    height: 8px;
+            &:hover {
+                height: 6px;
+            }
 
-                    @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
-                        height: 6px;
-                    }
-                }
-
-                &.active {
-                    background-color: var(--swiper-active);
-                    width: 30px;
-
-                    @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
-                        width: 28px;
-                    }
-                    @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
-                        width: 25px;
-                    }
-                }
+            &.active {
+                background-color: var(--swiper-active, #ffd700);
+                width: 30px;
 
                 @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
-                    width: 17px;
+                    width: 28px;
                 }
                 @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
-                    width: 16px;
-                    border-radius: 2px;
+                    width: 25px;
                 }
+            }
+
+            @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) and (min-width: getBreakpoint('mobileXL')) {
+                width: 17px;
+            }
+            @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+                width: 16px;
+                border-radius: 2px;
             }
         }
     }
@@ -212,7 +213,7 @@
         left: 92px;
         cursor: pointer;
         z-index: 1;
-        @include multi-transition(transform, 300ms);
+        @include multi-transition((transform, opacity), 300ms);
 
         &:hover {
             transform: scale(1.1);
@@ -227,8 +228,96 @@
             left: 10px;
         }
     }
+
+    &__placeholder {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+        background: rgba(255, 255, 255, 0.05); /* Легкий прозрачный фон */
+        border: 2px dashed rgba(255, 255, 255, 0.2); /* Стильная пунктирная рамка */
+        border-radius: 16px;
+        margin: 0 auto;
+        max-width: 500px; /* Чтобы текст не растягивался сосиской */
+
+        &-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--secondary);
+            text-align: center;
+            font-weight: 400;
+
+            @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
+                font-size: 14px;
+            }
+        }
+    }
 }
 
 div.slider-box {
     overflow: hidden;
+}
+
+.our-team__item {
+    position: relative;
+    padding: 16px;
+    border-radius: 12px;
+    @include multi-transition((background-color, box-shadow), 300ms);
+
+    &.locked {
+        background: linear-gradient(135deg, rgba(200, 200, 200, 0.3), rgba(180, 180, 180, 0.3));
+        border: 2px solid rgba(150, 150, 150, 0.4);
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
+            background: linear-gradient(135deg, rgba(200, 200, 200, 0.25), rgba(180, 180, 180, 0.25));
+        }
+
+        .our-team__icon {
+            color: var(--text-gray, #999);
+        }
+
+        &:hover {
+            box-shadow: 0 4px 8px rgba(150, 150, 150, 0.2);
+        }
+    }
+
+    &.unlocked {
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 200, 0, 0.15));
+        border: 2px solid rgba(255, 200, 0, 0.5);
+
+        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.12), rgba(255, 200, 0, 0.12));
+        }
+
+        .our-team__icon {
+            color: #ffd700;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        &:hover {
+            box-shadow: 0 6px 12px rgba(255, 200, 0, 0.3);
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 200, 0, 0.2));
+        }
+    }
+}
+
+.our-team__icon {
+    display: inline-block;
+    margin-bottom: 12px;
+    line-height: 1;
+    @include multi-transition(color, 300ms);
+
+    svg {
+        display: block;
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 0px rgba(255, 200, 0, 0));
+    }
+    50% {
+        filter: drop-shadow(0 0 6px rgba(255, 200, 0, 0.6));
+    }
 }

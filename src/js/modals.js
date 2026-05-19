@@ -1,4 +1,5 @@
 import { ModalManager } from './ModalManager.js'
+import { updateAchievementsOnAuthChange } from './achievements.js'
 
 const modals = new ModalManager()
 
@@ -36,6 +37,7 @@ if (authBtn) {
 		if (isAuthorized) {
 			setLocalStorage('headerName', '')
 			updateAuthUI('')
+			updateAchievementsOnAuthChange()
 		} else {
 			modals.open('header')
 		}
@@ -51,6 +53,7 @@ if (authModalForm) {
 			modals.close('header')
 			setLocalStorage('headerName', inputName)
 			updateAuthUI(inputName)
+			updateAchievementsOnAuthChange()
 			authModalForm.reset()
 		}
 	})

@@ -13,6 +13,24 @@ const operations = {
 
 let activeOperation = null;
 
+function checkAndUnlockCalculatorAchievements() {
+  const username = localStorage.getItem('headerName');
+  if (!username) return;
+
+  const calcKey = `calcCount_${username}`;
+  let calcCount = parseInt(localStorage.getItem(calcKey) || '0') + 1;
+
+  if (calcCount === 1) {
+    unlockAchievement(username, 'calculator', 'first_calc');
+  }
+
+  if (calcCount >= 100) {
+    unlockAchievement(username, 'calculator', 'hundred_calcs');
+  }
+
+  localStorage.setItem(calcKey, calcCount);
+}
+
 operationsContainer.addEventListener("click", (e) => {
   const clickedBtn = e.target;
   if (clickedBtn === e.currentTarget || !clickedBtn.dataset.action) return;
@@ -68,8 +86,10 @@ const validateAndGetValues = () => {
 resultBtn.addEventListener("click", () => {
   const data = validateAndGetValues();
   
-  if (!data) return; 
+  if (!data) return;
 
   const calculate = operations[activeOperation];
   resultSpan.textContent = calculate(data.num1, data.num2);
+
+  checkAndUnlockCalculatorAchievements();
 });
