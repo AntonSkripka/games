@@ -9,5 +9,7 @@ import './js/rpsGame';
 import './js/calc';
 import './js/timeCalc';
 import './js/threeNumbers';
+import './js/dino';
+import './js/football';
 import './js/filterCards';
 import './js/achievements';

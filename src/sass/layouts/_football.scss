@@ -156,58 +156,6 @@
         }
     }
 
-    &__cone {
-        height: 50px;
-        animation: move-up-down 2s ease-in-out infinite;
-
-        @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
-            display: none;
-        }
-
-        &.paused {
-            animation: none;
-        }
-
-        &.cone1 {
-            animation: move-down-up 2s ease-in-out infinite;
-            animation-delay: 0s;
-        }
-
-        &.cone2 {
-            margin-top: 170px;
-            animation-delay: 0.8s;
-
-            @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
-                margin-top: 0;
-            }
-            @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
-                margin-top: 0;
-            }
-        }
-
-        &.cone3 {
-            animation: move-down-up 2s ease-in-out infinite;
-            animation-delay: 1.2s;
-        }
-
-        &.cone4 {
-            margin-top: 170px;
-            animation-delay: 1.8s;
-
-            @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
-                margin-top: 0;
-            }
-            @media screen and (max-width: calc(getBreakpoint('mobileXL') - 1px)) {
-                margin-top: 0;
-            }
-        }
-
-        &.cone5 {
-            animation: move-down-up 2s ease-in-out infinite;
-            animation-delay: 2.4s;
-        }
-    }
-
     &__gate {
         position: absolute;
         top: 70px;
@@ -310,32 +258,5 @@
         @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
             display: none;
         }
-    }
-}
-
-.cone1 {
-    @media screen and (max-width: calc(getBreakpoint('tablet') - 1px)) {
-        display: none;
-    }
-}
-
-@keyframes move-up-down {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-40px);
-    }
-}
-
-@keyframes move-down-up {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(40px);
-    }
-    100% {
-        transform: translateY(0);
     }
 }
